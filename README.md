@@ -11,3 +11,6 @@ The user may switch between a brush and eraser.
 
 And if the canvas is too messy, the canvas may be completely be cleared
 with the reset button on the bottom right.
+
+-------------------------
+Live site through Github Pages: https://erleh.github.io/Etch-a-sketch/
