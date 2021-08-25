@@ -1,0 +1,183 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+:root{
+    --clr-main-200: #4F4F4F;
+    --clr-main-300: #3F3F3F;
+    --clr-main-400: #373737;
+
+    --clr-btn-hvr-400: aqua;
+    --clr-btn-prs-400: rgb(94, 75, 53);
+
+    --clr-pop-100: #FFFFFF;
+
+    --clr-cnvs-100: 0 100% 100%;
+}
+
+html{
+    background-color: var(--clr-main-400);
+    color: var(--clr-pop-100);
+}
+
+body{
+    margin: 0;
+}
+
+h1{
+    margin: 0;
+}
+
+header{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    margin: 1rem 4rem;
+}
+
+header > .title{
+    grid-area: title;
+    align-self: center;
+    justify-self: center;
+}
+
+header > input{
+    grid-area: button;
+    align-self: center;
+    justify-self: center;
+    width: 3rem;
+    height: 3rem;
+}
+
+footer{
+    text-align: center;
+    margin: 10rem;
+}
+
+.button{
+    cursor:pointer;
+    font-size: 2rem;
+    transition-property: color, transform;
+    transition-duration: .3s;
+
+}
+
+.button:hover{
+    color: var(--clr-btn-hvr-400);
+    transform: scale(1.1);
+}
+
+.button:active{
+    color: var(--clr-btn-prs-400);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > .button{
+    max-width: 5rem;
+    margin: .5rem;
+    padding: .25rem 1rem;
+}
+
+.main{
+    margin: 0 auto;
+    max-width: 65rem;
+    box-shadow: 0 0 1rem hsl(0 0% 0%);
+    display: grid;
+    justify-items: center;
+    grid-template-areas: 
+        "controls canvas toolbar";
+    grid-template-columns: min-content auto min-content;
+}
+
+.main > .button{
+    justify-self: center;
+    align-self: center;
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+#slider-container{
+    grid-area: controls;
+}
+
+#slider-container > .slider{
+    -webkit-appearance: none;
+    margin: .2rem 1rem;
+    max-width: 10rem;
+    max-height: 3rem;
+    background: var(--clr-main-200);
+}
+
+.canvas{
+    grid-area: canvas;
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    width: 40rem;
+}
+
+.toolbar{
+    grid-area: toolbar;
+    background-color: var(--clr-main-300);
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    min-width: 10rem;
+    max-width: 15rem;
+}
+
+.toolbar input[type="color"]{
+    cursor:pointer;
+    opacity: 0;
+}
+
+.toolbar > .color-picker{
+    cursor:pointer;
+    display: inline-block;
+    margin: 3rem auto;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100px;
+    background-color: black;
+    transition-property: background-color;
+    transition-duration: .4s;
+}
+
+.toolbar > .button{
+    margin: 3rem auto;
+}
+
+.pixel{
+    background-color: hsl(var(--clr-cnvs-100));
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+
+@media screen and (max-width:942px){
+    .main{
+        max-width: 40rem;
+        grid-template-areas: 
+            "canvas"
+            "toolbar"
+            "controls";
+    }
+
+    .toolbar{
+        flex-direction: row;
+        justify-self: center;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    footer{
+        margin: 5rem;
+    }
+}
