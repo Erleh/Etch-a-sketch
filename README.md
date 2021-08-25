@@ -1,4 +1,6 @@
+-------------------------
 Etch-a-Sketch project
+-------------------------
 
 Allows user to draw on a canvas by hovering over with their cursor.
 
